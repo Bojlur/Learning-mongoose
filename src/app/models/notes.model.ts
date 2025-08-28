@@ -14,7 +14,12 @@ const noteSchema = new Schema<INote>(
     pinned: { type: Boolean, default: false },
     tags: {
         label: { type: String, required: true },
-        color: { type: String, default: "blue" }
+        color: { type: String, default: "gray" }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     }
 },{
     versionKey: false,
